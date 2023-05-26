@@ -3,10 +3,10 @@ import dotenv from 'dotenv'
 dotenv.config();
 const connection = mysql.createConnection({
     host:'aws.connect.psdb.cloud',
-    user:'mkv258ac4evpa2ebinwz',
-    password:'pscale_pw_DOPkgQOwOAZ0QR3zkNEhEX98mkfMNg83DSbWTGAXkuq',
+    user:'3zair75946iee83xyt1r',
+    password:'pscale_pw_plQ61C3bBAlJ22kUrQE0gQmQU1Xa3O2BGcUaYXT0mXI',
     database:'souliya_test',
-    ssl:{"rejectUnauthorized":true}
+    ssl:{}
 })
 connection.connect(function(err){
     if(err) {
