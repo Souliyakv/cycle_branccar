@@ -1,0 +1,1 @@
+export const TESTSQL = `UPDATE model SET brandName = 'BYD'  WHERE brandName = '23'`;
