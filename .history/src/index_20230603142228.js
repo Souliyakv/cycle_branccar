@@ -26,4 +26,3 @@ function testSelect() {
         console.log(`result`, r);
     }).catch(error => console.log(`query error ${error.message}`));
 }
-testSelect();

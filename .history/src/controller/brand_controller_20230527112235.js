@@ -1,13 +1,10 @@
-import { dbConnection } from "../config/db.config.js";
 import connection from "../middleware/db.js";
 import { FINDBRAND, FINDBRANDADMIN, INSERTBRAND, SHOWBRAND, UNSHOWBRAND } from "../model/brand_model.js";
 
 
 export const findBrandController = (req,res) =>{
     try {
-        
-        dbConnection.query(FINDBRAND,(err,result)=>{
-            console.log(result);
+        connection.query(FINDBRAND,(err,result)=>{
             return res.json(result)
         })
     } catch (error) {
@@ -33,8 +30,7 @@ export const addBrandController = (req,res) =>{
     try {
         let {brandName} = req.body;
         let values = [[brandName]];
-       
-        dbConnection.query(INSERTBRAND,[values],(err,result)=>{
+        connection.query(INSERTBRAND,[values],(err,result)=>{
             if(err) throw err;
             return res.json({
                 msg:result

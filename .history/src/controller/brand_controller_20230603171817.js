@@ -7,7 +7,6 @@ export const findBrandController = (req,res) =>{
     try {
         
         dbConnection.query(FINDBRAND,(err,result)=>{
-            console.log(result);
             return res.json(result)
         })
     } catch (error) {

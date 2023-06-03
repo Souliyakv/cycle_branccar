@@ -4,7 +4,6 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
-import { dbConnection } from './config/db.config.js';
 
 dotenv.config();
 const Port = process.env.PORT;
@@ -20,10 +19,3 @@ app.use(api,router)
 app.listen(Port,()=>{
     console.log(`Server Running on port ${Port}`)
 });
-
-function testSelect() {
-    dbConnection.query(`SELECT * FROM brand`).then(r => {
-        console.log(`result`, r);
-    }).catch(error => console.log(`query error ${error.message}`));
-}
-testSelect();

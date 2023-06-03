@@ -5,9 +5,7 @@ import { FINDBRAND, FINDBRANDADMIN, INSERTBRAND, SHOWBRAND, UNSHOWBRAND } from "
 
 export const findBrandController = (req,res) =>{
     try {
-        
-        dbConnection.query(FINDBRAND,(err,result)=>{
-            console.log(result);
+        connection.query(FINDBRAND,(err,result)=>{
             return res.json(result)
         })
     } catch (error) {
