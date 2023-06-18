@@ -1,0 +1,22 @@
+"use strict";
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SECRET_KEY = exports.PORT = exports.DB_PORT = exports.DB_PASSWORD = exports.DB_USERNAME = exports.DB_HOST = exports.DB_NAME = void 0;
+const dotenv_1 = __importDefault(require("dotenv"));
+dotenv_1.default.config();
+const PORT = process.env.PORT;
+exports.PORT = PORT;
+const SECRET_KEY = process.env.SECRET_KAY;
+exports.SECRET_KEY = SECRET_KEY;
+const DB_NAME = process.env.DB_NAME;
+exports.DB_NAME = DB_NAME;
+const DB_HOST = process.env.DB_HOST;
+exports.DB_HOST = DB_HOST;
+const DB_USERNAME = process.env.DB_USERNAME;
+exports.DB_USERNAME = DB_USERNAME;
+const DB_PASSWORD = process.env.DB_PASSWORD;
+exports.DB_PASSWORD = DB_PASSWORD;
+const DB_PORT = process.env.DB_PORT;
+exports.DB_PORT = DB_PORT;

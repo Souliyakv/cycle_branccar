@@ -1,0 +1,54 @@
+GET http://localhost:5000/project/suliya-auto/test HTTP/1.1
+Content-Type: application/json
+
+###
+POST http://localhost:5000/project/suliya-auto/brand/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "brandName":"brand1"
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/brand/all HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/brand/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":1,
+    "brandName":"brand1Update"
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/model/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "modelName":"model4",
+    "brandName":"brand4"
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/model/update HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":3,
+    "modelName":"model2",
+    "brandName":"brand2"
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/model/all HTTP/1.1
+Content-Type: application/json
+
+{
+
+}
