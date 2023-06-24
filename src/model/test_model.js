@@ -1,0 +1,1 @@
+export const TESTSQL = `DELETE FROM brand WHERE brandID=2;`;
