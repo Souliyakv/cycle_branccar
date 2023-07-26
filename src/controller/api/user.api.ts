@@ -3,6 +3,7 @@ import jwt from "jsonwebtoken";
 import { UserEntity } from "../../config/db.config";
 
 import { IKeys } from "../../model/base.model";
+import { Gensalt } from "../../services/base.service";
 
 
 export class AddUser {
@@ -122,16 +123,25 @@ export class Login {
                 if (!user) return resolve('username incorrect')
 
                 const str = user.phonenumber + this.password;
+
                 const validator = bcrypt.compareSync(str, user.password);
                 if (!validator) return resolve('password incorrect');
 
-                const tokenmodel = {
+                let tokenmodel = {
                     username: this.username,
-                    phonenumber: user.phonenumber
+                    salt: ""
                 }
 
-                const token = jwt.sign(tokenmodel, IKeys.jwtkey, 
-                    { expiresIn: '5d' });
+                tokenmodel.salt = Gensalt(user.username);
+
+                // console.log(tokenmodel)
+                await UserEntity.update({ phonenumber: tokenmodel.salt }, {
+                    where: {
+                          id: user.id
+                    }
+                });
+
+                const token = jwt.sign(tokenmodel, IKeys.jwtkey, { expiresIn: '3d' });
 
                 this.response = {
                     token: token

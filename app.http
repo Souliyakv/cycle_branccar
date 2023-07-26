@@ -48,6 +48,36 @@ Content-Type: application/json
 ###
 POST http://localhost:5000/project/suliya-auto/model/all HTTP/1.1
 Content-Type: application/json
+token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxhbiIsInNhbHQiOiI3OWY0MTFjZDJlYzFjMWRmYzY0Nzg4MjkzMjkzZTZiN2M3MzBmZjdkYmE0YTFlNzA0OWRjYjFkNjY0Yzk0OTRiIiwiaWF0IjoxNjg3MTY2ODA0LCJleHAiOjE2ODc0MjYwMDR9.etIbR0Irbp0In4Xamdc7Ta6z4iyH7aJMVUnyuS9JZ64
+
+{
+
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/user/create HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "lan",
+    "password": "12345",
+    "phonenumber": "1234567899"
+
+}
+
+###
+POST http://localhost:5000/project/suliya-auto/user/login HTTP/1.1
+Content-Type: application/json
+
+{
+    "username": "lan",
+    "password": "12345"
+}
+
+###
+GET http://localhost:5000/project/suliya-auto/access/test HTTP/1.1
+Content-Type: application/json
+token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImxhbnQyIiwicGhvbmVudW1iZXIiOiIxMjM0NTY3ODkiLCJpYXQiOjE2ODcxNTUyNjksImV4cCI6MTY4NzU4NzI2OX0.j2IhpSkg-5V8KqyQ9SDHMANJWMebstbnLOz-pOwt4Ek
 
 {
 

@@ -35,34 +35,13 @@ export const UserFactory = (name: string, con: Sequelize) => {
         role:{
             type: DataTypes.STRING,
             defaultValue: 'admin'
+        },
+        iden: {
+            type: DataTypes.STRING,
+            defaultValue: ''
         }
     }
 
     return con.define(name, attribute, {tableName: name, freezeTableName: true, timestamps: true});
 }
 
-
-
-// User.beforeCreate(function(user, options) {
-//     return cryptPassword(user.password)
-//       .then(success => {
-//         user.password = success;
-//       })
-//       .catch(err => {
-//         if (err) console.log(err);
-//       });
-//   });
-
-// function cryptPassword(password) {
-//   console.log("cryptPassword" + password);
-//   return new Promise(function(resolve, reject) {
-//     bcrypt.genSalt(10, function(err, salt) {
-//       // Encrypt password using bycrpt module
-//       if (err) return reject(err);
-
-//       bcrypt.hash(password, salt, null, function(err, hash) {
-//         if (err) return reject(err);
-//         return resolve(hash);
-//       });
-//     });
-//   });
